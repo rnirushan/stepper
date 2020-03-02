@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService, User } from '../user.service';
 import { Router } from '@angular/router';
+import { NotifierService } from "angular-notifier";
 
 
 @Component({
@@ -10,10 +11,13 @@ import { Router } from '@angular/router';
 })
 export class InputFormComponent implements OnInit {
   model: User;
-  
-  constructor(private readonly userService: UserService, private router: Router) {
+
+  constructor(
+    private readonly userService: UserService,
+    private readonly router: Router,
+    private readonly notifierService: NotifierService) {
     this.createNewModel();
-   }
+  }
 
   ngOnInit(): void {
   }
@@ -21,6 +25,7 @@ export class InputFormComponent implements OnInit {
   async onSaveUser(): Promise<void> {
     // has to be async if it's a server call
     let result = await this.userService.saveUser(this.model);
+    this.notifierService.notify("success", "Personal info has been added successfully.");
     this.router.navigateByUrl('/list');
   }
 

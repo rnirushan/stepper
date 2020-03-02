@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -13,6 +12,7 @@ import { UserListComponent } from './user-list/user-list.component';
 import { PieChartComponent } from './pie-chart/pie-chart.component';
 import { ChartModule } from 'angular-highcharts';
 import { LineChartComponent } from './line-chart/line-chart.component';
+import { NotifierModule } from "angular-notifier";
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { LineChartComponent } from './line-chart/line-chart.component';
     MatButtonModule,
     FormsModule,
     AgGridModule.withComponents([]),
-    ChartModule
+    ChartModule,
+    NotifierModule
   ],
   providers: [],
   bootstrap: [AppComponent]
