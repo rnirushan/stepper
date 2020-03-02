@@ -1,0 +1,9 @@
+.full-width {
+    width: 100%;
+}
+
+.info-container {
+    border: 1px solid #e6e2e2;
+    background: #f8f8f8;
+    padding: 4ex 3ex;
+}

@@ -1,0 +1,59 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-8 info-container">
+        <div class="alert alert-info" role="alert">
+            NOTE: Local storage has been used to store inserted personal info and displayed it in the grid
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1>Personal Info</h1>
+            </div>
+        </div>
+        <form class="info-form" #infoForm="ngForm">
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <mat-label>Enter First Name</mat-label>
+                        <input matInput required [(ngModel)]="model.firstname" name="firstname">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <mat-label>Enter Last Name</mat-label>
+                        <input matInput required [(ngModel)]="model.lastname" name="lastname">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <mat-label>Enter Age</mat-label>
+                        <input matInput required [(ngModel)]="model.age" name="age" type="number">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <mat-label>Enter Email</mat-label>
+                        <input matInput required [(ngModel)]="model.email" name="email">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <mat-form-field class="full-width">
+                        <mat-label>Enter Address</mat-label>
+                        <input matInput required [(ngModel)]="model.address" name="address">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button mat-raised-button color="primary" [disabled]="!infoForm.valid" (click)="onSaveUser()">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
